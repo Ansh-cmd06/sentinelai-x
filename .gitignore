@@ -1,0 +1,30 @@
+# Root .gitignore for AI-Security-Lab-master
+
+# Environment & Credentials
+.env
+.env.*
+!.env.example
+*.env
+*.key
+*.pem
+*.cert
+*.crt
+secrets/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Logs
+*.log
+data/reports/*.log
+
+# Build & Packaging
+dist/
+build/

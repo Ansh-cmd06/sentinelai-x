@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: sentinelai-x
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT "app.main:app"
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: FLASK_DEBUG
+        value: "False"
+      - key: SUPABASE_DB_URL
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PEPPER_KEY
+        generateValue: true
+      - key: OLLAMA_HOST
+        sync: false
